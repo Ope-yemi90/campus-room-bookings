@@ -40,7 +40,7 @@ export default function MyBookingsPage() {
             </span>
             <span className="text-lg font-bold tracking-tight">CampusSpace</span>
           </Link>
-          <Link href="/" className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-50 hover:text-[#102b46] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600">
+          <Link href="/" className="inline-flex min-h-11 items-center rounded-lg px-3 text-sm font-semibold text-slate-600 transition hover:bg-slate-50 hover:text-[#102b46] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600">
             Browse Rooms
           </Link>
         </nav>
@@ -110,14 +110,14 @@ export default function MyBookingsPage() {
                           <button
                             type="button"
                             onClick={() => handleCancel(booking.id, roomName)}
-                            className="inline-flex h-9 items-center justify-center rounded-lg bg-[#102b46] px-3 text-xs font-semibold text-white transition hover:bg-[#183d5e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+                            className="inline-flex min-h-11 items-center justify-center rounded-lg bg-[#102b46] px-3 text-xs font-semibold text-white transition hover:bg-[#183d5e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
                           >
                             Confirm cancellation
                           </button>
                           <button
                             type="button"
                             onClick={() => setBookingToCancel(null)}
-                            className="inline-flex h-9 items-center justify-center rounded-lg border border-amber-300 bg-white px-3 text-xs font-semibold text-amber-950 transition hover:bg-amber-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+                            className="inline-flex min-h-11 items-center justify-center rounded-lg border border-amber-300 bg-white px-3 text-xs font-semibold text-amber-950 transition hover:bg-amber-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
                           >
                             Keep booking
                           </button>
@@ -130,7 +130,7 @@ export default function MyBookingsPage() {
                           setMessage("");
                           setBookingToCancel(booking.id);
                         }}
-                        className="inline-flex h-10 w-full shrink-0 items-center justify-center rounded-lg border border-rose-200 px-4 text-sm font-semibold text-rose-700 transition hover:bg-rose-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600 sm:w-auto"
+                        className="inline-flex min-h-11 w-full shrink-0 items-center justify-center rounded-lg border border-rose-200 px-4 text-sm font-semibold text-rose-700 transition hover:bg-rose-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600 sm:w-auto"
                       >
                         Cancel Booking
                       </button>
@@ -152,7 +152,7 @@ export default function MyBookingsPage() {
                     </div>
                     <div className="sm:col-span-2 lg:col-span-1">
                       <dt className="text-xs font-semibold uppercase tracking-[0.1em] text-slate-400">Purpose</dt>
-                      <dd className="mt-1 break-words text-sm leading-5 text-slate-700">{booking.purpose}</dd>
+                      <dd className="mt-1 break-words text-sm leading-5 text-slate-700 [overflow-wrap:anywhere]">{booking.purpose}</dd>
                     </div>
                   </dl>
                 </article>

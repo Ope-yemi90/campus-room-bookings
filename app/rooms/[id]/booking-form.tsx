@@ -116,7 +116,7 @@ export default function BookingForm({ roomId, roomName, timeSlots }: BookingForm
       ) : (
         <form onSubmit={handleSubmit} className="mt-5 space-y-4" noValidate>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <label className="block text-sm font-medium text-slate-700">
+            <label className="block min-w-0 text-sm font-medium text-slate-700">
               Student&apos;s full name
               <input
                 type="text"
@@ -124,11 +124,11 @@ export default function BookingForm({ roomId, roomName, timeSlots }: BookingForm
                 required
                 value={studentName}
                 onChange={(event) => setStudentName(event.target.value)}
-                className="mt-1.5 h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm text-[#102b46] outline-none transition placeholder:text-slate-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/15"
+                className="mt-1.5 h-11 w-full min-w-0 rounded-lg border border-slate-300 bg-white px-3 text-sm text-[#102b46] outline-none transition placeholder:text-slate-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/15"
                 placeholder="e.g. Alex Johnson"
               />
             </label>
-            <label className="block text-sm font-medium text-slate-700">
+            <label className="block min-w-0 text-sm font-medium text-slate-700">
               Student&apos;s email address
               <input
                 type="email"
@@ -136,11 +136,11 @@ export default function BookingForm({ roomId, roomName, timeSlots }: BookingForm
                 required
                 value={studentEmail}
                 onChange={(event) => setStudentEmail(event.target.value)}
-                className="mt-1.5 h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm text-[#102b46] outline-none transition placeholder:text-slate-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/15"
+                className="mt-1.5 h-11 w-full min-w-0 rounded-lg border border-slate-300 bg-white px-3 text-sm text-[#102b46] outline-none transition placeholder:text-slate-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/15"
                 placeholder="you@university.edu"
               />
             </label>
-            <label className="block text-sm font-medium text-slate-700">
+            <label className="block min-w-0 text-sm font-medium text-slate-700">
               Booking date
               <input
                 type="date"
@@ -152,10 +152,10 @@ export default function BookingForm({ roomId, roomName, timeSlots }: BookingForm
                   setTime("");
                   setMessage("");
                 }}
-                className="mt-1.5 h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm text-[#102b46] outline-none transition focus:border-teal-600 focus:ring-2 focus:ring-teal-600/15"
+                className="mt-1.5 h-11 w-full min-w-0 rounded-lg border border-slate-300 bg-white px-3 text-sm text-[#102b46] outline-none transition focus:border-teal-600 focus:ring-2 focus:ring-teal-600/15"
               />
             </label>
-            <label className="block text-sm font-medium text-slate-700">
+            <label className="block min-w-0 text-sm font-medium text-slate-700">
               Available time slot
               <select
                 required
@@ -165,7 +165,7 @@ export default function BookingForm({ roomId, roomName, timeSlots }: BookingForm
                   setMessage("");
                 }}
                 disabled={!date || !isReady || availableSlots.length === 0}
-                className="mt-1.5 h-11 w-full rounded-lg border border-slate-300 bg-white px-3 text-sm text-[#102b46] outline-none transition focus:border-teal-600 focus:ring-2 focus:ring-teal-600/15 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400"
+                className="mt-1.5 h-11 w-full min-w-0 rounded-lg border border-slate-300 bg-white px-3 text-sm text-[#102b46] outline-none transition focus:border-teal-600 focus:ring-2 focus:ring-teal-600/15 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400"
               >
                 <option value="">
                   {!date ? "Choose a date first" : availableSlots.length ? "Choose a time" : "No times available"}
@@ -177,14 +177,14 @@ export default function BookingForm({ roomId, roomName, timeSlots }: BookingForm
             </label>
           </div>
 
-          <label className="block text-sm font-medium text-slate-700">
+          <label className="block min-w-0 text-sm font-medium text-slate-700">
             Purpose of booking
             <textarea
               required
               rows={3}
               value={purpose}
               onChange={(event) => setPurpose(event.target.value)}
-              className="mt-1.5 w-full resize-y rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-[#102b46] outline-none transition placeholder:text-slate-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/15"
+              className="mt-1.5 w-full min-w-0 resize-y rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-[#102b46] outline-none transition placeholder:text-slate-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/15"
               placeholder="What will you use the room for?"
             />
           </label>

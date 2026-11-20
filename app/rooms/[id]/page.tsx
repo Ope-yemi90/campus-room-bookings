@@ -32,7 +32,7 @@ export default async function RoomDetailsPage({
             </span>
             <span className="text-lg font-bold tracking-tight">CampusSpace</span>
           </Link>
-          <Link href="/my-bookings" className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-50 hover:text-[#102b46] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600">
+          <Link href="/my-bookings" className="inline-flex min-h-11 items-center rounded-lg px-3 text-sm font-semibold text-slate-600 transition hover:bg-slate-50 hover:text-[#102b46] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600">
             My Bookings
           </Link>
         </nav>
@@ -58,7 +58,7 @@ export default async function RoomDetailsPage({
 
             <div className="p-6 sm:p-9 lg:p-12">
               <p className="text-sm font-semibold uppercase tracking-[0.14em] text-teal-700">Room details</p>
-              <h1 className="mt-3 text-3xl font-semibold leading-tight tracking-tight text-[#102b46] sm:text-4xl">{room.name}</h1>
+              <h1 className="mt-3 break-words text-3xl font-semibold leading-tight tracking-tight text-[#102b46] sm:text-4xl">{room.name}</h1>
 
               <dl className="mt-8 grid grid-cols-1 gap-5 border-b border-slate-100 pb-7 sm:grid-cols-2">
                 <div>

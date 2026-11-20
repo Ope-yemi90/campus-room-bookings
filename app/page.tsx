@@ -20,7 +20,7 @@ export default function Home() {
             <CampusMark />
             <span className="text-lg font-bold tracking-tight text-[#102b46]">CampusSpace</span>
           </Link>
-          <Link href="/my-bookings" className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-50 hover:text-[#102b46] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600">
+          <Link href="/my-bookings" className="inline-flex min-h-11 items-center rounded-lg px-3 text-sm font-semibold text-slate-600 transition hover:bg-slate-50 hover:text-[#102b46] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600">
             My Bookings
           </Link>
         </nav>
@@ -37,7 +37,7 @@ export default function Home() {
             <span className="h-1.5 w-1.5 rounded-full bg-teal-300" />
             Your campus, your space
           </p>
-          <h1 className="max-w-3xl text-4xl font-semibold leading-tight tracking-[-0.035em] text-white sm:text-5xl lg:text-6xl">
+          <h1 className="max-w-3xl text-3xl font-semibold leading-tight tracking-[-0.035em] text-white sm:text-5xl lg:text-6xl">
             Find Your Perfect Study Space
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
@@ -55,7 +55,7 @@ export default function Home() {
           <p className="text-sm text-slate-500">{rooms.length} spaces to explore</p>
         </div>
 
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
           {rooms.map((room) => {
             const isAvailable = room.availableTimeSlots.some((slot) => slot.maxBookableSeats > 0);
 
@@ -74,7 +74,7 @@ export default function Home() {
                 </div>
 
                 <div className="flex flex-1 flex-col p-5 sm:p-6">
-                  <h3 className="text-lg font-semibold leading-snug text-[#102b46]">{room.name}</h3>
+                  <h3 className="break-words text-lg font-semibold leading-snug text-[#102b46]">{room.name}</h3>
                   <p className="mt-2 flex items-center gap-2 text-sm text-slate-500">
                     <svg viewBox="0 0 24 24" fill="none" className="h-4 w-4 shrink-0 text-teal-700" aria-hidden="true">
                       <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z" stroke="currentColor" strokeWidth="1.7" />
