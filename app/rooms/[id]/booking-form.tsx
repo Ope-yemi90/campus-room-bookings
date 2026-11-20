@@ -98,9 +98,9 @@ export default function BookingForm({ roomId, roomName, timeSlots }: BookingForm
   }
 
   return (
-    <section className="mt-8 border-t border-slate-100 pt-7" aria-labelledby="booking-heading">
-      <h2 id="booking-heading" className="text-base font-semibold text-[#102b46]">Ready to study here?</h2>
-      <p className="mt-1 text-sm text-slate-500">Choose a date and time to request this room.</p>
+    <section className="mt-8 border-t border-brand-blush pt-7" aria-labelledby="booking-heading">
+      <h2 id="booking-heading" className="text-base font-semibold text-charcoal">Ready to study here?</h2>
+      <p className="mt-1 text-sm text-charcoal/70">Choose a date and time to request this room.</p>
 
       {!isOpen ? (
         <button
@@ -109,14 +109,14 @@ export default function BookingForm({ roomId, roomName, timeSlots }: BookingForm
             setIsOpen(true);
             setMessage("");
           }}
-          className="mt-4 inline-flex h-11 w-full items-center justify-center rounded-lg bg-[#102b46] px-5 text-sm font-semibold text-white transition hover:bg-[#183d5e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600 sm:w-auto"
+          className="mt-4 inline-flex h-11 w-full items-center justify-center rounded-lg bg-brand-primary px-5 text-sm font-semibold text-white transition hover:bg-brand-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary sm:w-auto"
         >
           Book This Room
         </button>
       ) : (
         <form onSubmit={handleSubmit} className="mt-5 space-y-4" noValidate>
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
-            <label className="block min-w-0 text-sm font-medium text-slate-700">
+            <label className="block min-w-0 text-sm font-medium text-charcoal">
               Student&apos;s full name
               <input
                 type="text"
@@ -124,11 +124,11 @@ export default function BookingForm({ roomId, roomName, timeSlots }: BookingForm
                 required
                 value={studentName}
                 onChange={(event) => setStudentName(event.target.value)}
-                className="mt-1.5 h-11 w-full min-w-0 rounded-lg border border-slate-300 bg-white px-3 text-sm text-[#102b46] outline-none transition placeholder:text-slate-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/15"
+                className="mt-1.5 h-11 w-full min-w-0 rounded-lg border border-brand-rose/50 bg-white px-3 text-sm text-charcoal outline-none transition placeholder:text-charcoal/70 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/15"
                 placeholder="e.g. Alex Johnson"
               />
             </label>
-            <label className="block min-w-0 text-sm font-medium text-slate-700">
+            <label className="block min-w-0 text-sm font-medium text-charcoal">
               Student&apos;s email address
               <input
                 type="email"
@@ -136,11 +136,11 @@ export default function BookingForm({ roomId, roomName, timeSlots }: BookingForm
                 required
                 value={studentEmail}
                 onChange={(event) => setStudentEmail(event.target.value)}
-                className="mt-1.5 h-11 w-full min-w-0 rounded-lg border border-slate-300 bg-white px-3 text-sm text-[#102b46] outline-none transition placeholder:text-slate-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/15"
+                className="mt-1.5 h-11 w-full min-w-0 rounded-lg border border-brand-rose/50 bg-white px-3 text-sm text-charcoal outline-none transition placeholder:text-charcoal/70 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/15"
                 placeholder="you@university.edu"
               />
             </label>
-            <label className="block min-w-0 text-sm font-medium text-slate-700">
+            <label className="block min-w-0 text-sm font-medium text-charcoal">
               Booking date
               <input
                 type="date"
@@ -152,10 +152,10 @@ export default function BookingForm({ roomId, roomName, timeSlots }: BookingForm
                   setTime("");
                   setMessage("");
                 }}
-                className="mt-1.5 h-11 w-full min-w-0 rounded-lg border border-slate-300 bg-white px-3 text-sm text-[#102b46] outline-none transition focus:border-teal-600 focus:ring-2 focus:ring-teal-600/15"
+                className="mt-1.5 h-11 w-full min-w-0 rounded-lg border border-brand-rose/50 bg-white px-3 text-sm text-charcoal outline-none transition focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/15"
               />
             </label>
-            <label className="block min-w-0 text-sm font-medium text-slate-700">
+            <label className="block min-w-0 text-sm font-medium text-charcoal">
               Available time slot
               <select
                 required
@@ -165,7 +165,7 @@ export default function BookingForm({ roomId, roomName, timeSlots }: BookingForm
                   setMessage("");
                 }}
                 disabled={!date || !isReady || availableSlots.length === 0}
-                className="mt-1.5 h-11 w-full min-w-0 rounded-lg border border-slate-300 bg-white px-3 text-sm text-[#102b46] outline-none transition focus:border-teal-600 focus:ring-2 focus:ring-teal-600/15 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400"
+                className="mt-1.5 h-11 w-full min-w-0 rounded-lg border border-brand-rose/50 bg-white px-3 text-sm text-charcoal outline-none transition focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/15 disabled:cursor-not-allowed disabled:bg-brand-cream disabled:text-charcoal/70"
               >
                 <option value="">
                   {!date ? "Choose a date first" : availableSlots.length ? "Choose a time" : "No times available"}
@@ -177,20 +177,20 @@ export default function BookingForm({ roomId, roomName, timeSlots }: BookingForm
             </label>
           </div>
 
-          <label className="block min-w-0 text-sm font-medium text-slate-700">
+          <label className="block min-w-0 text-sm font-medium text-charcoal">
             Purpose of booking
             <textarea
               required
               rows={3}
               value={purpose}
               onChange={(event) => setPurpose(event.target.value)}
-              className="mt-1.5 w-full min-w-0 resize-y rounded-lg border border-slate-300 bg-white px-3 py-2.5 text-sm text-[#102b46] outline-none transition placeholder:text-slate-400 focus:border-teal-600 focus:ring-2 focus:ring-teal-600/15"
+              className="mt-1.5 w-full min-w-0 resize-y rounded-lg border border-brand-rose/50 bg-white px-3 py-2.5 text-sm text-charcoal outline-none transition placeholder:text-charcoal/70 focus:border-brand-primary focus:ring-2 focus:ring-brand-primary/15"
               placeholder="What will you use the room for?"
             />
           </label>
 
           {message && (
-            <p role="status" className={`rounded-lg px-4 py-3 text-sm ${messageIsError ? "bg-rose-50 text-rose-800" : "bg-teal-50 text-teal-900"}`}>
+            <p role="status" className={`rounded-lg border px-4 py-3 text-sm ${messageIsError ? "border-brand-rose/40 bg-brand-blush text-brand-deep" : "border-brand-blush bg-brand-cream text-brand-primary"}`}>
               {message}
             </p>
           )}
@@ -202,14 +202,14 @@ export default function BookingForm({ roomId, roomName, timeSlots }: BookingForm
                 setIsOpen(false);
                 setMessage("");
               }}
-              className="inline-flex h-11 items-center justify-center rounded-lg border border-slate-300 bg-white px-5 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600"
+              className="inline-flex h-11 items-center justify-center rounded-lg border border-brand-blush bg-white px-5 text-sm font-semibold text-brand-deep transition hover:bg-brand-cream focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary"
             >
               Cancel
             </button>
             <button
               type="submit"
               disabled={!isReady}
-              className="inline-flex h-11 items-center justify-center rounded-lg bg-[#102b46] px-5 text-sm font-semibold text-white transition hover:bg-[#183d5e] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600 disabled:cursor-wait disabled:opacity-60"
+              className="inline-flex h-11 items-center justify-center rounded-lg bg-brand-primary px-5 text-sm font-semibold text-white transition hover:bg-brand-deep focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-primary disabled:cursor-wait disabled:bg-brand-blush disabled:text-brand-deep"
             >
               Confirm Booking
             </button>

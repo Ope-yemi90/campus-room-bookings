@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CampusSpace | Campus Room Booking",
+  title: "UniReserve | Campus Room Booking",
   description: "Find and explore study rooms and campus spaces for your next study session.",
 };
 
