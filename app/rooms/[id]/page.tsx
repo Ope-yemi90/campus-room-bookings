@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { rooms } from "../../data";
+import BookingForm from "./booking-form";
 
 // Prebuild a details page for each room in the shared data file.
 export function generateStaticParams() {
@@ -96,6 +97,12 @@ export default async function RoomDetailsPage({
                   ))}
                 </ul>
               </section>
+
+              <BookingForm
+                roomId={room.id}
+                roomName={room.name}
+                timeSlots={room.availableTimeSlots}
+              />
             </div>
           </div>
         </article>
