@@ -25,6 +25,7 @@ type BookingContextValue = {
   bookings: Booking[];
   isReady: boolean;
   createBooking: (newBooking: NewBooking, maxSeats: number) => boolean;
+  cancelBooking: (bookingId: string) => void;
 };
 
 const STORAGE_KEY = "campus-space-bookings";
@@ -129,9 +130,24 @@ export function BookingProvider({ children }: { children: ReactNode }) {
     [],
   );
 
+  const cancelBooking = useCallback((bookingId: string) => {
+    const updatedBookings = getBookingsSnapshot().filter(
+      (booking) => booking.id !== bookingId,
+    );
+    cachedBookings = updatedBookings;
+
+    try {
+      window.localStorage.setItem(STORAGE_KEY, JSON.stringify(updatedBookings));
+    } catch {
+      // Keep the updated list available for this session if storage is blocked.
+    }
+
+    listeners.forEach((listener) => listener());
+  }, []);
+
   return (
     <BookingContext.Provider
-      value={{ bookings, isReady, createBooking }}
+      value={{ bookings, isReady, createBooking, cancelBooking }}
     >
       {children}
     </BookingContext.Provider>

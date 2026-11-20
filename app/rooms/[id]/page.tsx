@@ -32,7 +32,7 @@ export default async function RoomDetailsPage({
             </span>
             <span className="text-lg font-bold tracking-tight">CampusSpace</span>
           </Link>
-          <Link href="/bookings" className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-50 hover:text-[#102b46] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600">
+          <Link href="/my-bookings" className="rounded-lg px-3 py-2 text-sm font-semibold text-slate-600 transition hover:bg-slate-50 hover:text-[#102b46] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-teal-600">
             My Bookings
           </Link>
         </nav>
